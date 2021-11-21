@@ -29,6 +29,7 @@ public class AddDaily extends javax.swing.JFrame {
         initComponents();
         this.id = id;
         this.home = home;
+        sp1.setValue(1);
         if (kondisi == "edit") {
             lb_action.setText("UbahDaily");
             btn_save.setVisible(false);
@@ -62,8 +63,8 @@ public class AddDaily extends javax.swing.JFrame {
         rb1 = new javax.swing.JRadioButton();
         rb2 = new javax.swing.JRadioButton();
         rb3 = new javax.swing.JRadioButton();
-        dc1 = new com.toedter.calendar.JDateChooser();
         sp1 = new javax.swing.JSpinner();
+        dc1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Add Daily");
@@ -162,8 +163,8 @@ public class AddDaily extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dc1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(172, 172, 172))
+                        .addComponent(dc1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(183, 183, 183))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -195,7 +196,7 @@ public class AddDaily extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(sp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(dc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -205,7 +206,7 @@ public class AddDaily extends javax.swing.JFrame {
                     .addComponent(btn_update)
                     .addComponent(btn_delete)
                     .addComponent(btn_clear))
-                .addContainerGap())
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -231,7 +232,6 @@ public class AddDaily extends javax.swing.JFrame {
         }
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String date = sdf.format(dc1.getDate());
-        
         kegiatan = tf3.getText();
         prioritas = sp1.getValue().toString();
         if (waktu.isEmpty() || kegiatan.isEmpty() || prioritas.isEmpty()) {
@@ -265,7 +265,7 @@ public class AddDaily extends javax.swing.JFrame {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String date = sdf.format(dc1.getDate());
         kegiatan = tf3.getText();
-        prioritas = sp1.getValue().toString();
+        prioritas = (String) sp1.getValue();
         if (waktu.isEmpty() || kegiatan.isEmpty() || prioritas.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Lupa ya?! Di isi Astagfirullah");
         } else {
